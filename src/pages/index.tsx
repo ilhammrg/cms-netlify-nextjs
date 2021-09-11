@@ -2,7 +2,8 @@ import Layout from "../components/Layout";
 import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
-import { SocialList } from "../components/SocialList";
+import Socials from "../components/Socials";
+import Writings from "../components/Writings";
 
 export default function Index() {
   return (
@@ -10,51 +11,34 @@ export default function Index() {
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
       <TwitterCardMeta url={"/"} />
-      <div className="container">
-        <div>
-          <h1>
-            Hi, We're Next.js & Netlify<span className="fancy">.</span>
-          </h1>
-          <span className="handle">@nextjs-netlify-blog</span>
-          <h2>A blog template with Next.js and Netlify.</h2>
-          <SocialList />
-        </div>
+      <div className="flex flex-col justify-start items-start py-0 px-4">
+        <section className="flex flex-col justify-start items-start">
+          <h1 className="typewriter font-bold text-3xl mb-3 mx-0 pr-1">Hi, I'm Ilham 👋🏻</h1>
+          <Socials />
+          <p className="font-light text-2xl">I made this website to post my writings, document my projects, also other boring stuff that you might won't be interested :)</p>
+        </section>
+        <Writings />
       </div>
       <style jsx>{`
-        .container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex: 1 1 auto;
-          padding: 0 1.5rem;
-        }
-        h1 {
-          font-size: 2.5rem;
-          margin: 0;
-          font-weight: 500;
-        }
-        h2 {
-          font-size: 1.75rem;
-          font-weight: 400;
-          line-height: 1.25;
-        }
-        .fancy {
-          color: #15847d;
-        }
-        .handle {
-          display: inline-block;
-          margin-top: 0.275em;
-          color: #9b9b9b;
-          letter-spacing: 0.05em;
+        .typewriter {
+          overflow: hidden; /* Ensures the content is not revealed until the animation */
+          border-right: .15em solid #2c3e50; /* The typwriter cursor */
+          white-space: nowrap; /* Keeps the content on a single line */
+          animation: 
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
         }
 
-        @media (min-width: 769px) {
-          h1 {
-            font-size: 3rem;
-          }
-          h2 {
-            font-size: 2.25rem;
-          }
+        /* The typing effect */
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 230px }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: #2c3e50; }
         }
       `}</style>
     </Layout>
