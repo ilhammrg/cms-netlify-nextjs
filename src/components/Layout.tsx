@@ -15,9 +15,9 @@ export default function Layout({ children }: Props) {
         <meta name="theme-color" content="#fff" />
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       </Head>
-      <nav>
+      {/* <nav>
         <Navigation />
-      </nav>
+      </nav> */}
       <main>{children}</main>
       <style jsx>
         {`
@@ -33,11 +33,13 @@ export default function Layout({ children }: Props) {
           }
           @media (min-width: 769px) {
             .root {
-              display: flex;
-              flex: 1 0 auto;
+              display: grid;
+              grid-template-column: auto 1fr auto;
             }
             main {
-              flex: 1 0 auto;
+              margin: 0 auto;
+              /* flex: 1 0 auto; */
+              width: 720px;
             }
           }
         `}
