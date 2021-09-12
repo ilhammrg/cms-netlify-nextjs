@@ -11,3 +11,11 @@ tags:
     name: mdx
   - slug: markdown
     name: markdown
+  - slug: article
+    name: article
+  - slug: works
+    name: works
+  - slug: projects
+    name: projects
+  - slug: dev
+    name: dev

@@ -1,23 +1,38 @@
+import { GetStaticProps } from "next";
 import Layout from "../components/Layout";
 import BasicMeta from "../components/meta/BasicMeta";
 import OpenGraphMeta from "../components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import Socials from "../components/Socials";
 import Writings from "../components/Writings";
+import { listPostContent, PostContent } from "../lib/posts";
 
-export default function Index() {
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = listPostContent(1, 10);
+  return {
+    props: {
+      posts,
+    },
+  };
+};
+
+type Props = {
+  posts: PostContent[],
+}
+
+export default function Index({ posts }: Props) {
   return (
     <Layout>
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
       <TwitterCardMeta url={"/"} />
-      <div className="flex flex-col justify-start items-start py-0 px-4">
+      <div className="flex flex-col justify-start items-start py-5 md:py-16 px-4">
         <section className="flex flex-col justify-start items-start">
           <h1 className="typewriter font-bold text-3xl mb-3 mx-0 pr-1">Hi, I'm Ilham 👋🏻</h1>
           <Socials />
           <p className="font-light text-2xl">I made this website to post my writings, document my projects, also other boring stuff that you might won't be interested :)</p>
         </section>
-        <Writings />
+        <Writings posts={posts} />
       </div>
       <style jsx>{`
         .typewriter {

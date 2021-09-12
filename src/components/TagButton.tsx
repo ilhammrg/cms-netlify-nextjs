@@ -8,20 +8,21 @@ export default function TagButton({ tag }: Props) {
   return (
     <>
       <Link href={"/posts/tags/[[...slug]]"} as={`/posts/tags/${tag.slug}`}>
-        <a>{tag.name}</a>
+        <a className="text-sm">{tag.name}</a>
       </Link>
       <style jsx>{`
         a {
           display: inline-block;
-          border-radius: 3px;
-          background-color: rgba(21, 132, 125, 0.2);
-          color: #15847d;
-          transition: background-color 0.3s ease;
-          padding: 0.25em 0.5em;
+          border-radius: 5px;
+          font-weight: 300;
+          background-color: rgba(229, 231, 235, 1);
+          color: rgba(17, 24, 39, 1);
+          transition: background-color 0.1s ease;
+          padding: 0.25em 0.75em;
         }
         a:active,
         a:hover {
-          background-color: rgba(21, 132, 125, 0.4);
+          background-color: rgba(209, 213, 219, 1);
         }
       `}</style>
     </>
