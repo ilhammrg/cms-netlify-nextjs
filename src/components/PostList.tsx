@@ -1,9 +1,10 @@
 import React from "react";
 import { PostContent } from "../lib/posts";
-import PostItem from "./PostItem";
+// import PostItem from "./PostItem";
 import TagLink from "./TagLink";
 import Pagination from "./Pagination";
 import { TagContent } from "../lib/tags";
+import WritingItem from "../components/WritingItem";
 
 type Props = {
   posts: PostContent[];
@@ -17,12 +18,8 @@ export default function PostList({ posts, tags, pagination }: Props) {
   return (
     <div className={"container"}>
       <div className={"posts"}>
-        <ul className={"post-list"}>
-          {posts.map((it, i) => (
-            <li key={i}>
-              <PostItem post={it} />
-            </li>
-          ))}
+        <ul className="list-outside list-disc ml-4 mb-8">
+          {posts.map((post, index) => <WritingItem key={index} post={post} />)}
         </ul>
         <Pagination
           current={pagination.current}

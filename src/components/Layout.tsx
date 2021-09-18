@@ -32,7 +32,7 @@ export default function Layout({ children }: Props) {
               transition: background-color 0.1s ease;
             }
 
-            @media (min-width: 769px) {
+            @media (min-width: 768px) {
               nav {
                 margin: 0 auto;
                 width: 720px;
@@ -64,7 +64,7 @@ export default function Layout({ children }: Props) {
             /* display: block; */
             display: grid;
             grid-template-rows: 1fr auto;
-            padding: 2.75rem 0.5rem 1rem 0.5rem;
+            padding: 1rem 0.5rem 1rem 0.5rem;
             box-sizing: border-box;
             /* height: 100%; */
             min-height: 100vh;
@@ -73,7 +73,7 @@ export default function Layout({ children }: Props) {
             display: flex;
             min-height: 100%;
           }
-          @media (min-width: 769px) {
+          @media (min-width: 768px) {
             .root {
               /* display: grid;
               grid-template-column: auto 1fr auto; */
