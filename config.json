@@ -1,8 +1,17 @@
 {
-  "base_url": "https://wutali-nextjs-netlify-blog.netlify.app",
-  "site_title": "Next.js Netlify Blog",
-  "site_description": "Next.js blog template for Netlify",
+  "base_url": "https://ilhamgunawan.netlify.app",
+  "site_title": "Ilham Gunawan",
+  "site_description": "Hi I'm Ilham Gunawan. I made this website to post my writings, document my projects, also other boring stuff that you might won't be interested :)",
   "site_keywords": [
+    {
+      "keyword": "Ilham Gunawan"
+    },
+    {
+      "keyword": "Blog"
+    },
+    {
+      "keyword": "Programming"
+    },
     {
       "keyword": "Next.js"
     },
@@ -14,6 +23,6 @@
     }
   ],
   "posts_per_page": 5,
-  "twitter_account": "@my-account",
-  "github_account": "wutali"
+  "twitter_account": "@ilmuhammadrg",
+  "github_account": "ilhammrg"
 }

@@ -1,17 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+@tailwind base;
+@layer base {
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-lg;
+  }
+}
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
 
 html,
 body {
-  font-family: "Ubuntu", sans-serif;
-  background-color: #fff;
+  font-family: 'Nunito', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(249, 250, 251, 1);
   color: #222;
   font-weight: 200;
   height: 100%;
+  /* background-image: url(../wall-texture.jpg);
+  background-repeat: repeat; */
 }
 
-#__next {
+/* #__next {
   height: 100%;
+} */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
 a {
@@ -20,10 +45,10 @@ a {
   transition: color 0.3s ease;
 }
 
-a:active,
+/* a:active,
 a:hover {
   color: #000;
-}
+} */
 
 .youtube-container {
   position: relative;

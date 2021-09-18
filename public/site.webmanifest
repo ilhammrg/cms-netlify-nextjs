@@ -1,6 +1,6 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Ilham Gunawan",
+  "name": "Ilham Gunawan",
   "icons": [
     {
       "src": "icon.png",
@@ -9,6 +9,6 @@
     }
   ],
   "start_url": "/?utm_source=homescreen",
-  "background_color": "#000000",
-  "theme_color": "#000000"
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
 }
