@@ -65,7 +65,7 @@ export default function PostLayout({
             <h1>{title}</h1>
             <div className={"metadata font-normal text-gray-400"}>
               <div>
-                <Date date={date} />
+                📅 <Date date={date} />
               </div>
               {" | Written by: "}
               <div>
