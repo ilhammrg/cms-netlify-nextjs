@@ -69,12 +69,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
   const mdxSource = await renderToString(content, { components, scope: data });
+  const metaDescription = mdxSource.renderedOutput.slice(0, 150) + "...";
+  const plainDescription = metaDescription.replace(/(<([^>]+)>)/gi, "");
   return {
     props: {
       title: data.title,
       dateString: data.date,
       slug: data.slug,
-      description: "",
+      description: plainDescription,
       tags: data.tags,
       author: data.author,
       source: mdxSource
