@@ -6,28 +6,102 @@ author: ilhammrg
 tags:
   - dev
 ---
-Gunakanlah waktu sebaik-baiknya. Begitulah amanat dari orang tua untuk menjalani kehidupan. Soal kehidupan sangat luas, salah satunya dunia yang kebetulan sekarang sedang saya tekuni yaitu pengembangan perangkat lunak a.k.a software development. Efisiensi waktu menjadi hal dasar dalam membuat software. Maksudnya bagaimana sih? Hmm, sebelum masuk ke time complexity, tidak afdol kalau belum berkenalan dengan algoritma.
+Gunakanlah waktu sebaik-baiknya. Begitulah amanat dari orang tua untuk menjalani kehidupan. Soal kehidupan sangat luas, salah satunya dunia yang kebetulan sekarang sedang saya tekuni yaitu pengembangan perangkat lunak a.k.a software development. Efisiensi waktu menjadi hal penting dalam membuat software. Maksudnya bagaimana sih? Hmm, sebelum kita bahas time complexity, tidak afdol kalau belum berkenalan dengan algoritma.
 
-Kita kenalan dulu sebentar dengan algoritma. Algoritma adalah langkah-langkah yang berisi perintah tertentu yang bertujuan untuk melakukan suatu tugas yang diinginkan si pembuat. Dalam hal ini membuat program komputer. Sudah mulai paham dengan algoritma? Disini saya tidak akan membahas algoritma terlalu jauh, karena sudah banyak tulisan tentang ini. Kalau tertarik silahkan cari artikel atau buku mengenai algoritma, atau silahkan lanjutkan artikel ini, karena pembahasan nya saya usahakan tidak akan terlalu berat. Hehehe.
+Kita kenalan dulu sebentar dengan algoritma. Algoritma adalah langkah-langkah yang berisi perintah tertentu yang bertujuan untuk melakukan suatu tugas yang diinginkan si pembuat. Dalam hal ini membuat program komputer. Sudah mulai paham dengan algoritma? Disini saya tidak akan membahas algoritma terlalu jauh, karena sudah banyak tulisan tentang ini. Silahkan cari artikel atau buku mengenai algoritma untuk lebih detail.
 
-Mari kita lanjut ke pembahasan time complexity. Apa kaitannya time complexity dengan algoritma? 
+Mari kita lanjut ke pembahasan time complexity. Apa kaitan antara time complexity dengan algoritma? 
 
-Algoritma sebenarnya erat dengan kegiatan sehari-hari. Misalnya kegiatan mencuci baju. Kita tahu untuk mencuci baju biasanya ada dua cara, yaitu dengan mesin cuci atau dengan tangan secara langsung. Apa bedanya? Tentu saja tenaga yang digunakan dan waktu yang ditempuh dari mulai sampai selesai. Nah, dalam algoritma pun tidak begitu jauh. Untuk membuat suatu program pada komputer, akan ada banyak cara yang bisa digunakan, namun tetap memiliki tujuan yang sama. Yang berbeda adalah seberapa lama waktu yang digunakan komputer untuk menjalankan program atau algoritma nya. Inilah yang disebut time complexity.
+Algoritma sebenarnya erat dengan kegiatan sehari-hari. Misalnya kegiatan mencuci baju. Kita tahu untuk mencuci baju biasanya ada dua cara, yaitu dengan mesin cuci atau dengan tangan secara langsung. Apa bedanya? Tentu saja tenaga yang digunakan dan waktu yang ditempuh dari mulai sampai selesai. Nah, dalam algoritma pun tidak begitu jauh. Untuk membuat suatu program pada komputer, akan ada banyak cara yang bisa digunakan, namun tetap memiliki tujuan yang sama. Yang berbeda adalah berapa lama waktu yang digunakan komputer untuk menjalankan program atau algoritma nya. Inilah yang disebut time complexity.
 
 Semakin membingungkan bukan? tenang, bingung itu salah satu tanda kalau kita sedang dalam proses belajar. Dari yang tidak tahu menjadi tahu. Apakah bisa menjadi tempe? Wah penulis kebanyakan bercanda nih.
 
-Kita balik lagi ke analogi mencuci baju. Perbedaan antara mencuci baju menggunakan mesin dan tangan adalah tenaga dan waktu yang digunakan. Begitu pun yang terjadi pada algoritma pemrograman. Selain time complexity, ada yang disebut dengan space complexity, yaitu beban yang digunakan komputer untuk menjalankan suatu program. Kedua kompleksitas tersebut dapat diklasifikasi menggunakan notasi matematika yang disebut Big-O Notation.
+Kita balik lagi ke analogi mencuci baju. Perbedaan antara mencuci baju menggunakan mesin dan tangan adalah tenaga dan waktu yang digunakan. Begitu pun yang terjadi pada algoritma pemrograman. Selain time complexity, ada yang disebut dengan space complexity, yaitu beban yang digunakan komputer untuk menjalankan suatu program. Kedua kompleksitas tersebut dapat diklasifikasikan menggunakan notasi matematika yang disebut Big-O Notation.
 
-Definisi Big-O Notation sebenarnya cukup rumit. Menurut wikipedia:
+Definisi Big-O Notation sebenarnya cukup rumit dan penjabarannya lumayan kompleks. Menurut wikipedia:
 
 > *Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity*.
 
-Jika pertama kali membaca pernyataan di atas tentu membuat kita pusing. Silahkan diresapi baik-baik secara seksama. Alhamdulillah masih pusing, hehehe. Supaya pusingnya berkurang, kita coba jabarkan dengan contohnya. Ada beberapa contoh dari notasi time complexity berdasarkan klasifikasinya.
+Jika pertama kali membaca pernyataan di atas tentu membuat kita pusing. Silahkan diresapi baik-baik secara seksama. Alhamdulillah masih pusing, hehehe. Supaya pusingnya berkurang, kita coba ulas contoh time complexity berdasarkan kasus yang biasa ditemukan saat membuat program.
 
 1. Constant Time
 
+   Constant artinya tetap atau tidak berubah. Berarti banyaknya jumlah input atau masukkan pada suatu program tidak mempengaruhi berapa banyak langkah yang dijalankan komputer, atau kita biasa sebut dengan runtime.
+
+   ```
+   function hitung(n) {
+     return n + 1;
+   }
+   ```
+
+   Fungsi di atas mengembalikan hasil jumlah dari n ditambah 1. Berapa pun n yang diberikan, langkah prosesnya selalu tetap yaitu sebanyak satu kali.
 2. Linear Time
 
-3. Logaritmic Time
+   Linear berarti berbanding lurus. Runtime akan berjumlah n, dimana n merupakan input yang diberikan. Perbandingan jumlah runtime dengan input selalu 1 berbanding 1.
 
-4. Quadratic Time
+   ```
+   function cetak(n) {
+     for (var i = 0; i < n; i++) {
+       console.log('Cetak angka ', i);
+     }
+   }
+   ```
+
+   Fungsi cetak menerima input n berupa angka, akan melakukan iterasi sebanyak nilai n yang diberikan. Sehingga jumlah runtime selalu sama dengan input n yang diberikan.
+3. Quadratic Time
+
+   Kuadrat atau pangkat dua. Berarti lama waktu eksekusi adalah n pangkat 2, dimana n merupakan jumlah input yang diberikan.
+
+   ```
+   var array = [3, 1, 2, 5, 4];
+
+   function sorting(n) {
+     var ascending = [];
+     for (var i = 0; i < n.length; i++) {
+     var min = n[i];
+       for (var j =i+1; i < n.length; i++) {
+         if (n[i] < n[j]) min = n[j];
+       }
+       ascending.push(min);
+     }
+     return ascending;
+   }
+
+   var sorted = sorting(array);
+   console.log(sorted);
+   ```
+
+   Fungsi sorting menerima inputan n berupa array, dan menghasilkan array yang sudah diurutkan secara ascending. Dapat dilihat bahwa ada dua iterasi di dalam fungsi, dimana iterasi kedua berada di dalam iterasi pertama. Sehingga, jumlah runtime adalah sebanyak total iterasi, yaitu n pangkat 2.
+4. Logaritmic Time
+
+   Pada kasus ini, lama waktu dihitung dengan logaritma. Masih ingat logaritma pada pelajaran Matematika? Misalnya input yang diberikan sejumlah n, maka jumlah runtime adalah berkurang berdasarkan satu faktor.
+
+   ```
+   let sortedArray = [11, 24, 30, 43, 51, 61, 73, 86];
+   function isExists(number, array){
+       var midPoint = Math.floor( array.length /2 );
+       if( array[midPoint] === num) return true;
+       let isFirstHalf = false;
+       if( array[midPoint] < num ) isFirstHalf = true;
+     
+       else if( array[midpoint] > num ) isFirstHalf = false;
+       if (array.length == 1) return false;
+       else { 
+           // memanggil fungsi yang sama dengan mengeleminiasi setengah dari input array
+           if (isFirstHalf) 
+               return isExists(number, getFirstHalf(array));
+           else 
+               return isExists(number, getSecondHalf(array));
+       }
+   }
+   isExists (24, sortedArray); // return true
+   isExists (27, sortedArray); // return false
+   ```
+
+   Contoh dari logaritmic time adalah binary search. Binary search adalah algoritma yang berfungsi untuk mencari posisi nilai dari suatu array dengan cara ‘mengeliminasi’ setengah dari array input, untuk mempercepat proses pencarian. Ciri dari fungsi di atas adalah pemanggilan fungsi diri nya sendiri di dalam fungsi itu sendiri atau rekursif. Ya, fungsi rekursif merupakan salah satu contoh time complexity logaritmic.
+
+Empat contoh di atas sangat sering kita temui saat membuat program. Selain contoh di atas, masih banyak klasifikasi time complexity, namun penjelasan dan penjabarannya lumayan kompleks. Contoh-contoh tersebut menurut saya sudah sangat cukup menjelaskan apa itu time complexity dan cara menghitungnya.
+
+Nah, mengapa kita tidak membahas space complexity? Padahal sama pentingnya dengan time complexity. Di era komputasi yang modern, space complexity menjadi kurang relevan dibanding time complexity, sebab kapasitas dan performa komputer pada saat ini sudah jauh lebih baik dibanding 10 tahun yang lalu. Sehingga optimasi space complexity bisa di nomor dua kan.
+
+Untuk menerapkan time complexity yang baik, tentu tidak bisa instan. Biasanya kode program yang pertama kali kita hasilkan, memiliki time complexity yang besar. Seiring waktu kita akan menemukan solusi yang lebih efisien dan melakukan refactoring pada kode sebelumnya, sehingga menghasilkan time complexity yang lebih baik. Dengan time complexity yang baik, maka apapun software yang kita buat akan menjadi product yang jauh lebih baik, serta pengguna akan lebih nyaman menggunakannya.
