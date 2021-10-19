@@ -1,7 +1,7 @@
 {
-  "base_url": "https://ilhamgunawan.netlify.app",
+  "base_url": "https://ilhamgunawan.my.id",
   "site_title": "Ilham Gunawan",
-  "site_description": "Hi I'm Ilham Gunawan. I made this website to post my writings, document my projects, also other boring stuff that you might won't be interested :)",
+  "site_description": "Hi I'm Ilham Gunawan. This website contains my writings, projects, also other boring stuff that you might won't be interested :)",
   "site_keywords": [
     {
       "keyword": "Ilham Gunawan"
@@ -20,6 +20,9 @@
     },
     {
       "keyword": "React"
+    },
+    {
+      "keyword": "Ilham"
     }
   ],
   "posts_per_page": 5,
