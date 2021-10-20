@@ -1,28 +1,37 @@
 {
   "base_url": "https://ilhamgunawan.my.id",
   "site_title": "Ilham Gunawan",
-  "site_description": "Hi I'm Ilham Gunawan. This website contains my writings, projects, also other boring stuff that you might won't be interested :)",
+  "site_description": "Hi, I'm Ilham Muhammad Ramdhan Gunawan. This website contains my writings, projects, also other boring stuff that you might won't be interested :)",
   "site_keywords": [
     {
       "keyword": "Ilham Gunawan"
     },
     {
+      "keyword": "ilham gunawan"
+    },
+    {
+      "keyword": "Ilham Muhammad Ramdhan Gunawan"
+    },
+    {
+      "keyword": "ilham muhammad ramdhan gunawan"
+    },
+    {
+      "keyword": "Ilham Muhammad"
+    },
+    {
+      "keyword": "ilham muhammad"
+    },
+    {
+      "keyword": "ilhammrg"
+    },
+    {
       "keyword": "Blog"
     },
     {
-      "keyword": "Programming"
-    },
-    {
-      "keyword": "Next.js"
-    },
-    {
-      "keyword": "Netlify"
-    },
-    {
-      "keyword": "React"
-    },
-    {
       "keyword": "Ilham"
+    },
+    {
+      "keyword": "ilham"
     }
   ],
   "posts_per_page": 5,
