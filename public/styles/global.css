@@ -25,7 +25,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(249, 250, 251, 1);
   color: #222;
-  font-weight: 200;
+  /* font-weight: 200; */
   height: 100%;
   /* background-image: url(../wall-texture.jpg);
   background-repeat: repeat; */
