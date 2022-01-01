@@ -3,7 +3,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import { MdxRemote } from "next-mdx-remote/types";
 import hydrate from "next-mdx-remote/hydrate";
 import matter from "gray-matter";
-import { fetchPostContent } from "../../lib/posts";
+import { fetchPostContent, getPostsByYear, PostByYear } from "../../lib/posts";
 import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from 'date-fns';
@@ -21,6 +21,7 @@ export type Props = {
   author: string;
   description?: string;
   source: MdxRemote.Source;
+  postsByYear: PostByYear[];
 };
 
 const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
@@ -38,6 +39,7 @@ export default function Post({
   author,
   description = "",
   source,
+  postsByYear,
 }: Props) {
   const content = hydrate(source, { components })
   return (
@@ -48,6 +50,7 @@ export default function Post({
       tags={tags}
       author={author}
       description={description}
+      postsByYear={postsByYear}
     >
       {content}
     </PostLayout>
@@ -71,6 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mdxSource = await renderToString(content, { components, scope: data });
   const metaDescription = mdxSource.renderedOutput.slice(0, 150) + "...";
   const plainDescription = metaDescription.replace(/(<([^>]+)>)/gi, "");
+  const postsByYear = getPostsByYear();
   return {
     props: {
       title: data.title,
@@ -79,7 +83,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       description: plainDescription,
       tags: data.tags,
       author: data.author,
-      source: mdxSource
+      source: mdxSource,
+      postsByYear,
     },
   };
 };

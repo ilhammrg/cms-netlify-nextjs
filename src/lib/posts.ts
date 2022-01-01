@@ -13,6 +13,11 @@ export type PostContent = {
   readonly fullPath: string;
 };
 
+export type PostByYear = {
+  year: string;
+  posts: PostContent[];
+};
+
 let postCache: PostContent[];
 
 export function fetchPostContent(): PostContent[] {
@@ -79,4 +84,30 @@ export function listPostContent(
   return fetchPostContent()
     .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
     .slice((page - 1) * limit, page * limit);
+}
+
+export function getPostsByYear() {
+  const allPosts = fetchPostContent();
+  const postsByYear: PostByYear[] = allPosts.reduce((prev: PostByYear[], current) => {
+    if (prev.length === 0) {
+      const year = new Date(current.date).getFullYear().toString();
+      return [{ year, posts: [current] }];
+    } else {
+      const year = new Date(current.date).getFullYear().toString();
+      const yearIndex = prev.findIndex(item => item.year === year);
+      return yearIndex >= 0 ?
+        (prev.map((item) => {
+          return item.year === year ?
+            {
+              year: item.year,
+              posts: [ ...item.posts, current ],
+            }
+            :
+            item;
+        }))
+        :
+        [...prev, { year, posts: [current] }];
+    }
+  }, []);
+  return postsByYear;
 }

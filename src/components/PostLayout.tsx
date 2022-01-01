@@ -12,6 +12,7 @@ import TwitterCardMeta from "./meta/TwitterCardMeta";
 import TagButton from "./TagButton";
 import { getAuthor } from "../lib/authors";
 import { getTag } from "../lib/tags";
+import { PostByYear } from "../lib/posts";
 
 type Props = {
   title: string;
@@ -20,6 +21,7 @@ type Props = {
   tags: string[];
   author: string;
   description?: string;
+  postsByYear: PostByYear[];
   children: React.ReactNode;
 };
 export default function PostLayout({
@@ -29,12 +31,13 @@ export default function PostLayout({
   author,
   tags,
   description = "",
+  postsByYear,
   children,
 }: Props) {
   const keywords = tags.map(it => getTag(it).name);
   const authorName = getAuthor(author).name;
   return (
-    <Layout>
+    <Layout postsByYear={postsByYear}>
       <BasicMeta
         url={`/posts/${slug}`}
         title={title}
