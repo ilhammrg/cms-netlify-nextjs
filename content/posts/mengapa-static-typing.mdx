@@ -54,11 +54,11 @@ TypeScript menjadi solusi yang paling umum digunakan saat ini. Penggunaan nya mu
 
 Kita coba ubah fungsi sum sebelumnya ke dalam solusi TypeScript:
 
-`const sum = (a: number, b: number): number => a + b;`
-
-`sum(3, 4); // output => 7`
-
-`sum("3", 4) // Argument of type 'string' is not assignable to parameter of type 'number'.`
+```
+const sum = (a: number, b: number): number => a + b;
+sum(3, 4); // output => 7
+sum("3", 4) // Argument of type 'string' is not assignable to parameter of type 'number'.
+```
 
 Pada saat proses compile, TypeScript akan menampilkan error sehingga mencegah terjadinya runtime error. Kunjungi [](https://www.typescriptlang.org/)[dokumentasi](https://www.typescriptlang.org/) nya untuk lebih lanjut.
 
@@ -66,13 +66,13 @@ Pada saat proses compile, TypeScript akan menampilkan error sehingga mencegah te
 
 Flow juga menawarkan solusi yang mirip dengan TypeScript. Type annotation nya pun hampir sama dengan TypeScript. Berikut contoh fungsi sum dengan Flow:
 
-`/* @flow */`
+```
+/* @flow */
 
-`const sum = (a: number, b: number): number => a + b;`
-
-`sum(3, 4); // output => 7`
-
-``sum("3", 4) // Cannot call `sum` with `"3"` bound to `a` because string [1] is incompatible with number [2].``
+const sum = (a: number, b: number): number => a + b;
+sum(3, 4); // output => 7
+sum("3", 4) // Cannot call `sum` with `"3"` bound to `a` because string [1] is incompatible with number [2].
+```
 
 Lihat [dokumentasinya](https://flow.org/en/) jika tertarik.
 
