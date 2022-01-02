@@ -40,6 +40,13 @@ const sum = (a, b) => {
     throw new Error("a and b must be valid number");
   }
 };
+
+sum(1, 2); // output => 3
+
+sum("1", 2);
+Uncaught Error: a and b must be valid number
+    at sum (<anonymous>:5:11)
+    at <anonymous>:1:1
 ```
 
 Sekarang fungsi sum(a, b) menjadi lebih aman, namun masih ada kemungkinan terjadinya runtime error. Untuk menghindari dan meminimalisir runtime error yang terjadi, kita bisa gunakan static type checking terhadap kode JavaScript.
