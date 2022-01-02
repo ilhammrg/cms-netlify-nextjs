@@ -50,16 +50,30 @@ Sekarang fungsi sum(a, b) menjadi lebih aman, namun masih ada kemungkinan terjad
 
 ### TypeScript
 
-TypeScript menjadi solusi yang paling umum ditemukan saat ini. Penggunaan nya mudah diadopsi oleh programmer JavaScript karena syntax yang digunakan secara umum adalah syntax JavaScript. TypeScript menawarkan solusi `type` dan `interface` terhadap vanilla JavaScript.
+TypeScript menjadi solusi yang paling umum digunakan saat ini. Penggunaan nya mudah diadopsi oleh programmer JavaScript karena syntax yang digunakan secara umum adalah syntax JavaScript. TypeScript menawarkan solusi `type` dan `interface` terhadap vanilla JavaScript.
 
 Kita coba ubah fungsi sum sebelumnya ke dalam solusi TypeScript:
 
 `const sum = (a: number, b: number): number => a + b;`
 
-sum(3, 4); // output => 7
+`sum(3, 4); // output => 7`
 
-sum("3", 4) // Argument of type 'string' is not assignable to parameter of type 'number'.
+`sum("3", 4) // Argument of type 'string' is not assignable to parameter of type 'number'.`
 
 Pada saat proses compile, TypeScript akan menampilkan error sehingga mencegah terjadinya runtime error.
 
+### Flow
+
+Flow juga menawarkan solusi yang mirip dengan TypeScript. Type annotation nya pun hampir sama dengan TypeScript. Berikut contoh fungsi sum dengan Flow:
+
+`/* @flow */`
+
+`const sum = (a: number, b: number): number => a + b;`
+
+`sum(3, 4); // output => 7`
+
+``sum("3", 4) // Cannot call `sum` with `"3"` bound to `a` because string [1] is incompatible with number [2].``
+
 ### ReasonML
+
+Reason agak berbeda dengan kedua solusi sebelumnya. Syntax yang digunakan diadopsi dari OCaml, bahasa yang sudah digunakan industri lebih dari 20 tahun
