@@ -12,9 +12,10 @@ Kelebihannya, saat menulis program akan lebih cepat dan fleksibel. Variabel pada
 
 Misal: 
 
-`let x = "hello world"; // typeof x => string`
-
-`x = 1; // typeof x => number`
+```
+let x = "hello world"; // typeof x => string
+x = 1; // typeof x => number
+```
 
 Contoh di atas bisa berjalan dengan baik tanpa menimbulkan error, sangat fleksibel.
 
@@ -22,11 +23,11 @@ Kekurangannya, bugs akan muncul jika kita tidak melakukan validasi terhadap type
 
 Misal:
 
-`const sum = (a, b) => a + b;`
-
-`sum(1, 2); // output => 3`
-
-`sum(1, "2"); // output => "12"`
+```
+const sum = (a, b) => a + b;
+sum(1, 2); // output => 3
+sum(1, "2"); // output => "12"
+```
 
 Dari contoh fungsi `sum(a, b)` , output menjadi tidak sesuai jika tidak ada validasi untuk argumen a dan b.
 
@@ -49,7 +50,7 @@ Uncaught Error: a and b must be valid number
     at <anonymous>:1:1
 ```
 
-Sekarang fungsi sum(a, b) menjadi lebih aman, namun masih ada kemungkinan terjadinya runtime error. Untuk menghindari dan meminimalisir runtime error yang terjadi, kita bisa gunakan static type checking terhadap kode JavaScript.
+Sekarang fungsi `sum(a, b)` menjadi lebih aman, namun masih ada kemungkinan terjadinya runtime error. Untuk menghindari dan meminimalisir runtime error yang terjadi, kita bisa gunakan static type checking terhadap kode JavaScript.
 
 ### TypeScript
 
@@ -81,7 +82,7 @@ Lihat [dokumentasinya](https://flow.org/en/) jika tertarik.
 
 ### ReasonML
 
-Reason agak berbeda dengan kedua solusi sebelumnya. Syntax yang digunakan diadopsi dari OCaml, bahasa yang sudah digunakan industri lebih dari 20 tahun. Kode Reason akan dicompile ke JavaScript dengan bantuan BuckleScript (sekarang menjadi ReScript).
+Reason agak berbeda dengan kedua solusi sebelumnya. Syntax yang digunakan diadopsi dari OCaml, bahasa yang sudah digunakan industri lebih dari 20 tahun. Kode Reason akan dicompile ke JavaScript dengan bantuan BuckleScript (sekarang menjadi ReScript). Reason dikenal "kejam" karena compilernya yang sangat strict.
 
 Berikut fungsi sum pada Reason:
 
@@ -98,3 +99,7 @@ This has type:
 But somewhere wanted:
   int
 ```
+
+Reason akan mengetahui fungsi `sum(a, b)` menerima argumen `int` dan menghasilkan output `int`. Solusi lain dari Reason diantaranya adalah `Type`, `Variant`, `Record`, dan masih banyak lagi. Tertarik menggunakan Reason? Langsung saja eksplorasi di [dokumentasinya](https://reasonml.github.io/en/).
+
+Ketiga solusi di atas memiliki keunikan dan kelebihan nya masing-masing. Perlahan kita bisa
