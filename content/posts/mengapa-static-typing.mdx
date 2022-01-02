@@ -1,0 +1,31 @@
+---
+slug: mengapa-static-typing
+title: Mengapa Static Typing?
+date: 2022-01-02
+author: ilhammrg
+tags:
+  - article
+---
+Frontend development khususnya platform web tidak jauh dari JavaScript. Karena aplikasi web berjalan pada browser dimana JavaScript sebagai bahasa pemrogramannya. Menulis program dengan JavaScript cenderung lebih "mudah" dibanding scripting lainnya, sebab tidak ada static typing pada JavaScript.
+
+Kelebihannya, saat menulis program akan lebih cepat dan fleksibel. Variabel pada JavaScript bisa kita isi dengan apa saja sesuai keinginan. Kita bisa customize program sesuai keinginan dengan fleksibel.
+
+Misal: 
+
+`let x = "hello world";`
+
+`x = 1;`
+
+Contoh di atas bisa berjalan dengan baik tanpa menimbulkan error, sangat fleksibel.
+
+Kekurangannya, bugs akan sering muncul jika kita tidak melakukan validasi terhadap input type data.
+
+Misal:
+
+`const sum = (a, b) => a + b;`
+
+`sum(1, 2); // output => 3`
+
+`sum(1, "2"); // output => "12"`
+
+Dari contoh fungsi `sum(a, b)` , output menjadi tidak sesuai jika tidak ada validasi untuk arguman a dan b.
