@@ -32,19 +32,15 @@ Dari contoh fungsi `sum(a, b)` , output menjadi tidak sesuai jika tidak ada vali
 
 Kita bisa refactor fungsi sum menjadi:
 
-`const sum = (a, b) => {`
-
-`if (typeof a === "number" && typeof b === "number") {`
-
-`return a + b;`
-
-`} else {`
-
-`throw new Error("a and b must be valid number");`
-
-`}`
-
-`};`
+```
+const sum = (a, b) => {
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  } else {
+    throw new Error("a and b must be valid number");
+  }
+};
+```
 
 Sekarang fungsi sum(a, b) menjadi lebih aman, namun masih ada kemungkinan terjadinya runtime error. Untuk menghindari dan meminimalisir runtime error yang terjadi, kita bisa gunakan static type checking terhadap kode JavaScript.
 
