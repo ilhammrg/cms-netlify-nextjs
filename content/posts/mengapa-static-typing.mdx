@@ -12,13 +12,13 @@ Kelebihannya, saat menulis program akan lebih cepat dan fleksibel. Variabel pada
 
 Misal: 
 
-`let x = "hello world";`
+`let x = "hello world"; // typeof x => string`
 
-`x = 1;`
+`x = 1; // typeof x => number`
 
 Contoh di atas bisa berjalan dengan baik tanpa menimbulkan error, sangat fleksibel.
 
-Kekurangannya, bugs akan sering muncul jika kita tidak melakukan validasi terhadap input type data.
+Kekurangannya, bugs akan muncul jika kita tidak melakukan validasi terhadap type data.
 
 Misal:
 
@@ -28,4 +28,38 @@ Misal:
 
 `sum(1, "2"); // output => "12"`
 
-Dari contoh fungsi `sum(a, b)` , output menjadi tidak sesuai jika tidak ada validasi untuk arguman a dan b.
+Dari contoh fungsi `sum(a, b)` , output menjadi tidak sesuai jika tidak ada validasi untuk argumen a dan b.
+
+Kita bisa refactor fungsi sum menjadi:
+
+`const sum = (a, b) => {`
+
+`if (typeof a === "number" && typeof b === "number") {`
+
+`return a + b;`
+
+`} else {`
+
+`throw new Error("a and b must be valid number");`
+
+`}`
+
+`};`
+
+Sekarang fungsi sum(a, b) menjadi lebih aman, namun masih ada kemungkinan terjadinya runtime error. Untuk menghindari dan meminimalisir runtime error yang terjadi, ada banyak solusi yang bisa digunakan.
+
+### TypeScript
+
+TypeScript menjadi solusi yang paling umum ditemukan saat ini. Penggunaan nya mudah diadopsi oleh programmer JavaScript karena syntax yang digunakan secara umum adalah syntax JavaScript. TypeScript menawarkan solusi `type` dan `interface` terhadap vanilla JavaScript.
+
+Kita coba ubah fungsi sum sebelumnya ke dalam solusi TypeScript:
+
+`const sum = (a: number, b: number): number => a + b;`
+
+sum(3, 4); // output => 7
+
+sum("3", 4) // Argument of type 'string' is not assignable to parameter of type 'number'.
+
+Pada saat proses compile, TypeScript akan menampilkan error sehingga mencegah terjadinya runtime error.
+
+### ReasonML
