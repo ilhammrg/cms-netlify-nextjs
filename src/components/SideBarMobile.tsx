@@ -105,7 +105,7 @@ const DirectoryItem = (prop: { post: PostByYear }) => {
   );
 };
 
-export default function SideBarDesktop(prop: {
+export default function SideBarMobile(prop: {
   postsByYear: PostByYear[];
   setShowFolder;
 }) {
@@ -114,7 +114,7 @@ export default function SideBarDesktop(prop: {
   if (router.pathname.startsWith("/posts")) {
     return (
       <>
-        <aside className='container'>
+        <aside className='sidebar-mobile-container'>
           <button
             onClick={() => prop.setShowFolder(false)}
             className='mobile-folder'
@@ -138,7 +138,7 @@ export default function SideBarDesktop(prop: {
         </aside>
         <style jsx>
           {`
-            .container {
+            .sidebar-mobile-container {
               display: block;
               position: fixed;
               top: 0;
@@ -188,7 +188,7 @@ export default function SideBarDesktop(prop: {
             }
 
             @media screen and (min-width: 1024px) {
-              .container {
+              .sidebar-mobile-container {
                 display: none;
               }
             }
