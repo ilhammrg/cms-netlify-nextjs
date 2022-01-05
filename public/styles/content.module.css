@@ -54,6 +54,7 @@
   padding: 1rem;
   overflow: auto;
   margin: 1.75rem 0 0 0;
+  max-width: 200px;
 }
 
 .content pre code {
@@ -150,7 +151,25 @@
   width: 100%;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 320px) {
+  .content pre {
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 375px) {
+  .content pre {
+    max-width: 345px;
+  }
+}
+
+@media (min-width: 425px) {
+  .content pre {
+    max-width: 385px;
+  }
+}
+
+@media (min-width: 768px) {
   .content h2,
   .content h3,
   .content h4,
@@ -164,5 +183,9 @@
 
   .content p {
     font-size: 21px;
+  }
+
+  .content pre {
+    max-width: unset;
   }
 }
